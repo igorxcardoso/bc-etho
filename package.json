@@ -1,0 +1,27 @@
+{
+  "name": "bootcamp-digital-etho",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec ts-node --transpile-only --files ./src/index.ts --ignore ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorxcardoso/bootcamp-digital-etho.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igorxcardoso/bootcamp-digital-etho/issues"
+  },
+  "homepage": "https://github.com/igorxcardoso/bootcamp-digital-etho#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.2"
+  }
+}
