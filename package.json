@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/igorxcardoso/bootcamp-digital-etho#readme",
   "devDependencies": {
+    "@types/node": "^16.11.12",
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0",
     "tslint": "^6.1.3",
