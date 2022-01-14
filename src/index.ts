@@ -1,7 +1,9 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import { API_ROUTER } from './routes/api.routes';
+import config  from './config';
 
-const PORT = 5000;
+
 const app = express();
 
 app.use(express.json());
@@ -17,6 +19,8 @@ app.use(API_ROUTER);
 // });
 
 // Vai "escutar" o servidor
-app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`);
+app.listen(config.PORT, async () => {
+    console.log(`Server is running on port: ${config.PORT}`);
+
+    mongoose.connect(config.MONGO_URI)
 });
