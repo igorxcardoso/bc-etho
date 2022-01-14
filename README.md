@@ -11,8 +11,8 @@ npm run dev
 ## Estrutura Básica de um servidor em Node.JS em TypeScript
 
 Abaixo encontra-se um exemplo simples em node
-~~~typescript
-```
+
+```typescript
 import http from 'http';
 
 const server = http.createServer((request, response) => {
