@@ -2,7 +2,7 @@
 
 Para executar o npm basta digitar o seguinte comando:
 
-```
+```sh
 npm run dev
 ```
 
@@ -11,8 +11,8 @@ npm run dev
 ## Estrutura Básica de um servidor em Node.JS em TypeScript
 
 Abaixo encontra-se um exemplo simples em node
-~~~typescript
-```
+
+```typescript
 import http from 'http';
 
 const server = http.createServer((request, response) => {
@@ -28,6 +28,6 @@ server.listen(port, () => {
 ```
 
 Para executar
-```
+```sh
 npm run server-exemple
 ```
