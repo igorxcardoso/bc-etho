@@ -9,7 +9,7 @@ app.use(express.json());
 app.get('/', (request, response) => {
     // .sendStatus(200) -> Vai enviar o status e acabar com a requisição (n vai mostrar a mensagem)
     response.status(200).json({
-        message: 'We can create a Express server!'
+        message: 'We can create a Express server! :)'
     });
 
 });
