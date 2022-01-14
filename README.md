@@ -2,7 +2,7 @@
 
 Para executar o npm basta digitar o seguinte comando:
 
-```
+```sh
 npm run dev
 ```
 
@@ -28,6 +28,6 @@ server.listen(port, () => {
 ```
 
 Para executar
-```
+```sh
 npm run server-exemple
 ```
