@@ -1,5 +1,5 @@
 {
-  "name": "bc-etho",
+  "name": "netflix-fake-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/igorxcardoso/bc-etho.git"
+    "url": "git+https://github.com/igorxcardoso/netflix-fake-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/igorxcardoso/bc-etho/issues"
+    "url": "https://github.com/igorxcardoso/netflix-fake-api/issues"
   },
-  "homepage": "https://github.com/igorxcardoso/bc-etho#readme",
+  "homepage": "https://github.com/igorxcardoso/netflix-fake-api#readme",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.13",
