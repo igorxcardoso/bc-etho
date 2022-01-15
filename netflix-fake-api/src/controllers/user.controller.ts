@@ -8,7 +8,7 @@ async function create(request: Request, response: Response) {
 
     if (userExists) {
         return response.status(403).json({
-            message: 'Usuário já cadastrado'
+            message: 'Usuário já cadastrado!'
         });
     }
 
@@ -29,5 +29,36 @@ async function create(request: Request, response: Response) {
     });
 }
 
+async function view(request: Request, response: Response) {
+    // const { id } = request.params;
 
-export { create };
+    if(!request.params.id) {
+        return response.status(404).json({
+            message: 'Usuário não encontrado!'
+        });
+    }
+
+    const user = await User.findById(request.params.id);
+
+    if(!user) {
+        return response.status(404).json({
+            message: 'Usuário não encontrado!'
+        });
+    }
+
+    console.log({
+        id: user._id,
+        email: user.email,
+        name: user.name
+    });
+    return response.status(200).json({
+        user: {
+            id: user._id,
+            email: user.email,
+            name: user.name
+        }
+    });
+}
+
+
+export { create, view };
