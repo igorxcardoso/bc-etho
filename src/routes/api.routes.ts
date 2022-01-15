@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { User } from '../models/user.model'
+import * as userController from '../controllers/user.controller'
+
 
 const API_ROUTER = Router();
 
@@ -11,26 +12,7 @@ API_ROUTER.get('/', (request, response) => {
 });
 
 // Rotas de usuário
-API_ROUTER.post('/users/new', (request, response): void => {
-    const { name, email, password } = request.body
-
-    const user = new User({ name, email, password })
-
-    user.save((error: any, result: any) => {
-        if(error) {
-            console.log('Error:', typeof error)
-            response.json(error)
-        }else {
-            console.log('Result: ', typeof result)
-            response.status(201).json(result)
-        }
-    });
-
-
-    // console.log(name, email);
-
-    // return response.json(request.body);
-});
+API_ROUTER.post('/users/new', userController.create);
 
 
 // Para se usada entro lugar do projeto
