@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { User } from '../models/user.model';
 
 
+// POST /users
 async function create(request: Request, response: Response) {
     const { name, email, password } = request.body;
     const userExists = await User.findOne({ email });
@@ -29,6 +30,7 @@ async function create(request: Request, response: Response) {
     });
 }
 
+// GET /users/1
 async function view(request: Request, response: Response) {
     // const { id } = request.params;
 
@@ -60,12 +62,36 @@ async function view(request: Request, response: Response) {
     });
 }
 
+// GET /users
 async function list(request: Request, response: Response) {
     const users = await User.find({})
 
     return response.status(200).json(users);
 }
 
+// DELETE /users/1
+async function destroy(request: Request, response: Response) {
+    // const { id } = request.params;
 
+    const idExists = await User.findById(request.params.id);
 
-export { create, view, list };
+    if(!idExists) {
+        return response.status(404).json({
+            message: 'Usuário não encontrado!'
+        });
+    }
+
+    const deleteUser = await User.findByIdAndDelete(request.params.id);
+
+    if(!deleteUser) {
+        response.status(500).json({
+            message: 'Não foi possível deletar o usuário!'
+        });
+    }
+
+    return response.status(200).json({
+        message: 'Usuário apagado com sucesso!'
+    });
+}
+
+export { create, view, list, destroy };
