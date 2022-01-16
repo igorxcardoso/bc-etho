@@ -37,7 +37,7 @@ async function view(request: Request, response: Response) {
             message: 'Usuário não encontrado!'
         });
     }
-
+// Melhorar a busca
     const user = await User.findById(request.params.id);
 
     if(!user) {
@@ -60,5 +60,12 @@ async function view(request: Request, response: Response) {
     });
 }
 
+async function list(request: Request, response: Response) {
+    const users = await User.find({})
 
-export { create, view };
+    return response.status(200).json(users);
+}
+
+
+
+export { create, view, list };

@@ -14,6 +14,8 @@ API_ROUTER.get('/', (request, response) => {
 // Rotas de usuário
 API_ROUTER.post('/users/new', userController.create);
 API_ROUTER.get('/users/id/:id', userController.view);
+API_ROUTER.get('/users/list', userController.list);
+
 
 // Para se usada entro lugar do projeto
 export { API_ROUTER };
