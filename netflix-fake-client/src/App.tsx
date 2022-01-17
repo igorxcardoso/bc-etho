@@ -1,13 +1,14 @@
 import React from 'react';
-import Login from "./screens/login/login.screen";
-import { Route, Routes } from "react-router-dom";
-import { LoginPath } from "./screens/login/login.types"
-
+import Login from './screens/login/login.screen';
+import { Route, Routes } from 'react-router-dom';
+import { LoginPath } from './screens/login/login.types'
+import { ThemeProvider } from 'styled-components';
+import theme from './themes/main/theme';
 
 import './App.css';
 
 function App() {
-  const myText = "Olá";
+  // const myText = "Olá";
 
   return (
     // // Exemplo
@@ -18,11 +19,13 @@ function App() {
     //   </header>
     // </div>
 
-    <Routes>
-      {/* <Route path="/login" element={<Login />} /> */}
-      <Route path={LoginPath} element={<Login />} />
+    <ThemeProvider theme={theme}>
+      <Routes>
+        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path={LoginPath} element={<Login />} />
 
-    </Routes>
+      </Routes>
+    </ThemeProvider>
   );
 }
 
