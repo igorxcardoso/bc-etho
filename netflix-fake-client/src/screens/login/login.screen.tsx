@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/button.component";
+import Button from "../../components/buttons/button/button.component";
 
 export default function Login() {
     return (
