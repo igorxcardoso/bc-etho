@@ -11,4 +11,5 @@
 export default {
     MONGO_URI: "mongodb://localhost:27017",
     PORT: 5000,
+    TOKEN_SECRET: 'secret-key'
 }
