@@ -116,7 +116,7 @@ async function destroy(request: Request, response: Response) {
     const deleteUser = await User.findByIdAndDelete(request.params.id);
 
     if(!deleteUser) {
-        response.status(500).json({
+        return response.status(500).json({
             message: 'Não foi possível deletar o usuário!'
         });
     }
