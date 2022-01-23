@@ -29,11 +29,13 @@ const UserSchema = new Schema(
     }
 );
 
+//  Para fazer a hash da senha
 UserSchema.pre('save', async function(next) {
     const user = this as UserDocument;
 
+    //  Só vai criar a hash se a senha for criada ou alterada
     if (!user.isModified('password')) {
-        return next();
+        return next(); // O next é uma função de callback que vai para o proxímo bloco de código
     }
 
     const salt = await bcryptjs.genSalt(12);
@@ -43,6 +45,7 @@ UserSchema.pre('save', async function(next) {
     return next();
 });
 
+//  Para comprar as hashs
 UserSchema.methods.comparePassword = async function(preHashPassword: string) {
     const user = this as UserDocument;
 

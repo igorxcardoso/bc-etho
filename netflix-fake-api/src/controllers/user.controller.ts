@@ -24,11 +24,13 @@ async function create(request: Request, response: Response) {
             return response.status(201).json({
                 id: result._id,
                 email: result.email,
+                password: result.password,
                 name: result.name
             });
         }
     });
 }
+
 
 // GET /users/1
 async function view(request: Request, response: Response) {
@@ -48,19 +50,21 @@ async function view(request: Request, response: Response) {
         });
     }
 
-    console.log({
-        id: user._id,
-        email: user.email,
-        name: user.name
-    });
+    // console.log({
+    //     id: user._id,
+    //     email: user.email,
+    //     name: user.name
+    // });
     return response.status(200).json({
         user: {
             id: user._id,
             email: user.email,
+            password: user.password,
             name: user.name
         }
     });
 }
+
 
 // GET /users
 async function list(request: Request, response: Response) {
@@ -68,6 +72,7 @@ async function list(request: Request, response: Response) {
 
     return response.status(200).json(users);
 }
+
 
 // DELETE /users/1
 async function destroy(request: Request, response: Response) {
