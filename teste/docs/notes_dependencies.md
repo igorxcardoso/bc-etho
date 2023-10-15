@@ -1,15 +1,20 @@
-<h1>Dependencies</h1>
+# Dependencies
 
 
-<h3>@types/node</h3>
+#### @types/node
 Biblioteca de type para node. Para atualizar a tipagem do node para TypeScript.
 
-<h3>nodemon</h3>
+#### nodemon
 Para precisar dar comando para criar build.
 
-<h3>ts-node</h3>
+#### ts-node
 Transpilação de codigo. REPL. Um ambiente de programação de computador interativo simples que recebe entradas.
 
 
-<h3>typescript</h3>
+#### typescript
 A linguagem em si.
+
+
+#### JWT (Json Web Token)
+Autenticação do usuário.
+
